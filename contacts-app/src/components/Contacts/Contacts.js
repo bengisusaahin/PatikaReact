@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import classes from "./Contacts.module.css";
+
 import List from "./List/List";
 import Form from "./Form/Form";
 
@@ -24,7 +26,8 @@ const Contacts = () => {
   }, [contacts]);
 
   return (
-    <div>
+    <div className={classes.container}>
+      <h1>Contacts</h1>
       <List contacts={contacts} />
       <Form addContact={setContacts} contacts={contacts} />
     </div>

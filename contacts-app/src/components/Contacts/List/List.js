@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classes from "./../Contacts.module.css";
 
 const List = ({ contacts }) => {
   const [filterText, setFilterText] = useState("");
@@ -19,11 +20,16 @@ const List = ({ contacts }) => {
         onChange={(e) => setFilterText(e.target.value)}
       />
 
-      <ul>
+      <ul className={classes.list}>
         {filtered.map((contact, i) => (
-          <li key={i}>{contact.fullname}</li>
+          <li key={i}>
+            <span>{contact.fullname}</span>
+            <span>{contact.phone_number}</span>
+          </li>
         ))}
       </ul>
+
+      <p>Total Contacts ({filtered.length})</p>
     </div>
   );
 };

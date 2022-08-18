@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classes from "./../Contacts.module.css";
 
 const Form = ({ addContact, contacts }) => {
   const [form, setForm] = useState({ fullname: "", phone_number: "" });
@@ -38,7 +39,7 @@ const Form = ({ addContact, contacts }) => {
           onChange={onChangeInput}
         ></input>
       </div>
-      <div>
+      <div className={classes.btn}>
         <button>Add</button>
       </div>
     </form>
